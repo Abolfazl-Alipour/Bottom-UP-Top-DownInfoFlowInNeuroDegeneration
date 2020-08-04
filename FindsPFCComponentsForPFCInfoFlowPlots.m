@@ -1,7 +1,7 @@
 clear
 eeglab;
 close all
-destinationPath='E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\';
+destinationPath='pathTO\ProcessedData\';
 
 CntrlList=[894	908	8010	906	903	8060	893	909	911	895	913	900		899	914	910	890	891	912	905	904	892	902	901		897		907];
 CntrlListCumPFCComps={};
@@ -88,31 +88,7 @@ for i=1:length(PDListONDrug)
 end
 save([destinationPath,'PDListONDrugCumPFCCompsdDTF_ONDRUG.mat'],'PDListONDrugCumPFCComps');
 
-% PDListOnDrugCntrl=[894	908	8010	906	903	8060	893	909	911	895	913	900		899	914	910	890	891	912	905	904	892	902	901		897		907];
-% PDListOnDrugCntrlCumPFCComps={};
-% mm=1;
-% for i=1:length(PDListOnDrugCntrl)
-%     subjectID=PDListOnDrugCntrl(i);
-%     load([destinationPath,'EEGObj_Component',int2str(subjectID),'.mat'],'EEG')
-%     EEG = pop_dipfit_settings( EEG, 'hdmfile','C:\\Users\\aalipour\\Documents\\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\standard_vol.mat','coordformat','MNI','mrifile','C:\\Users\\aalipour\\Documents\\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\standard_mri.mat','chanfile','C:\\Users\\aalipour\\Documents\\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\elec\\standard_1005.elc','chansel',[1:EEG.nbchan] );
-%     EEG = pop_multifit(EEG, [1:size(EEG.icaweights,1)] ,'threshold',100,'dipplot','on','plotopt',{'normlen' 'on'});
-%     
-%     PFCComps={};
-%     kk=1;
-%     for compNo=1:size(EEG.dipfit.model,2)
-%     tmp=EEG.dipfit.model(compNo).posxyz;
-%         if tmp(1)>-74 && tmp(1)<75 && tmp(2)>16 && tmp(2)<75 && tmp(3)>-40 && tmp(3)<75 ;
-%             PFCComps{kk}=compNo;
-%             kk=kk+1;
-%         end
-% 
-%     end
-%     
-%     pop_dipplot( EEG, [cell2mat(PFCComps)] ,'rvrange',[0 100] ,'mri','C:\\Users\\aalipour\\Documents\\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\standard_mri.mat','normlen','on');
-%     PDListOnDrugCntrlCumPFCComps{mm}=cell2mat(PFCComps);
-%     mm=mm+1;
-% end
-% 
+
 PDListOnDrugCntrlCumPFCComps=CntrlListCumPFCComps;
 save([destinationPath,'PDListOnDrugCntrlCumPFCCompsdDTF.mat'],'PDListOnDrugCntrlCumPFCComps');
 
