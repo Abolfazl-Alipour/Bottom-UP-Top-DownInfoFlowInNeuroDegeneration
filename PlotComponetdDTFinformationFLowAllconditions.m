@@ -4,7 +4,7 @@
 
 
 upperFrequencyBound=58;
-destinationPath='E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\';
+destinationPath='PATH TO EEG OBJECTS';
 GammaYLim=0.003;
 BetaYLim=.002;
 AlphaYLim=0.0025;
