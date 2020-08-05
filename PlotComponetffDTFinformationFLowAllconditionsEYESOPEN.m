@@ -1,7 +1,7 @@
 
 
 upperFrequencyBound=58;
-destinationPath='E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\';
+destinationPath='PATH TO EEG OBJECTS';
 
 % CntrlList=[908,8010,8060,893,909,900,914,910,891,892,902];
 CntrlList=[894	908	8010	906	903	8060	893	909	911	895	913	900		899	914	910	890	891	912	905	904	892	902	901		897		907];
@@ -247,44 +247,9 @@ ax.FontSize = 32;
 
 hold off  
 
-%%%%%%%%%%%%%%%%% now alpha
-
-% 
-% lowerBound=8;
-% higherBound=12;
-% [h,p,ci,stats]=ttest2(mean(CntrlffDTFMat(:,lowerBound:higherBound),2),mean(PDOFFffDTFMat(:,lowerBound:higherBound),2))
-% 
-% computeCohen_d(mean(CntrlffDTFMat(:,lowerBound:higherBound),2),mean(PDOFFffDTFMat(:,lowerBound:higherBound),2))
-% 
-% x = 1:2;
-% Cntrl=mean(CntrlffDTFMat(:,lowerBound:higherBound),2);
-% PD=mean(PDOFFffDTFMat(:,lowerBound:higherBound),2);
-% data=[mean(Cntrl),mean(PD)];
-% figure; 
-% b = bar(x,data,'LineWidth',2);
-% b.FaceColor = 'flat';
-% b.CData(1,:) = [0.5 0.5 1];
-% b.CData(2,:) = [1 0.5 .5];
-% %,(std(PDONdDTFCntrlMat,1)./sqrt(size(PDONdDTFCntrlMat,1))));
-% hold on
-% er = errorbar(x,data,[sem(Cntrl),sem(PD)],[sem(Cntrl),sem(PD)],'CapSize',18,'LineWidth', 2);    
-% er.Color = [0 0 0];                            
-% er.LineStyle = 'none';  
-% title('Infromation flow in alpha band')
-% 
-% ylabel('Average mean ff-DTF (8-12 Hz)') 
-% ax=gca;
-% ax.YLim=[0 37];
-% ax.XTickLabel={('Cntrl'),('PD Patients Off Drug')};
-% 
-% ax.FontSize = 32;
-% 
-% hold off
 
 
-%%%%%%%%%%%%%%% now theta
 
-%%%%%%%%%%%%%%%  NOT SIGNIFICANT
 lowerBound=4;
 higherBound=7;
 PDOFFAnovaData=mean(PDOFFffDTFMat(:,lowerBound:higherBound),2)';
@@ -418,41 +383,6 @@ ax.FontSize = 32;
 
 hold off
 
-
-%%%%%%%%%%%%%%%%% now alpha
-% 
-% lowerBound=8;
-% higherBound=12;
-% [h,p,ci,stats] =ttest2(mean(PDONCntrlffDTF4Mat(:,lowerBound:higherBound),2),mean(PDONffDTF4Mat(:,lowerBound:higherBound),2))
-% 
-% computeCohen_d(mean(PDONCntrlffDTF4Mat(:,lowerBound:higherBound),2),mean(PDONffDTF4Mat(:,lowerBound:higherBound),2))
-% 
-% 
-% 
-% x = 1:2;
-% Cntrl=mean(PDONCntrlffDTF4Mat(:,lowerBound:higherBound),2);
-% PD=mean(PDONffDTF4Mat(:,lowerBound:higherBound),2);
-% data=[mean(Cntrl),mean(PD)];
-% figure; 
-% b = bar(x,data,'LineWidth',2);
-% b.FaceColor = 'flat';
-% b.CData(1,:) = [0.5 0.5 1];
-% b.CData(2,:) = [.5 1 .5];
-% %,(std(PDONdDTFCntrlMat,1)./sqrt(size(PDONdDTFCntrlMat,1))));
-% hold on
-% er = errorbar(x,data,[sem(Cntrl),sem(PD)],[sem(Cntrl),sem(PD)],'CapSize',18,'LineWidth', 2);    
-% er.Color = [0 0 0];                            
-% er.LineStyle = 'none';  
-% title('Infromation flow in alpha band')
-% 
-% ylabel('Average sum ff-DTF (8-12 Hz)') 
-% ax=gca;
-% ax.YLim=[0 37];
-% ax.XTickLabel={('Cntrl'),('PD Patients On Drug')};
-% 
-% ax.FontSize = 32;
-% 
-% hold off
 
 
 %%%%%%%%%%%%%%%%% now theta
