@@ -3,12 +3,12 @@
 
 clear
 close all
-destinationPath='E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\';
+destinationPath='PATH TO EEG OBJECTS';
 
 load([destinationPath,'CntrlListCumPFCCompsdDTF.mat'],'CntrlListCumPFCComps');
 
 upperFrequencyBound=58;
-destinationPath='E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\';
+destinationPath='PATH TO EEG OBJECTS';
 
 CntrlList=[894	908	8010	906	903	8060	893	909	911	895	913	900		899	914	910	890	891	912	905	904	892	902	901		897		907];
 
@@ -352,29 +352,6 @@ hold off
 
 
 %%%%%%%%%%%%%%
-% should ADD 814!!!!!!!!!!?? it is bad just like 826?
-
-% 
-% PDListOnDrugCntrl=[894	906 903	911 895 913 899 890 912 905 904 901];%	826];
-% PDONCntrlffDTF4Mat=nan(length(PDListOnDrugCntrl),upperFrequencyBound);
-% for i=1:length(PDListOnDrugCntrl)
-%     subjectID=PDListOnDrugCntrl(i);
-%     RPDCFileName=strcat('CompffDTFMatrx_',int2str(subjectID),'.mat');
-%     load(strcat(destinationPath,RPDCFileName))
-%     PFCComps=PDListOnDrugCntrlCumPFCComps{i};
-%     % Removes components that are not located in the PFC
-%     ffDTF=ffDTF(:,PFCComps,:,:);
-%     
-%     tmpTime=mean(ffDTF(:,:,1:58,:),4);
-%     infOutflow=nan(1,size(tmpTime,3));
-%     
-%     for layerNum=1:size(tmpTime,3)
-%         tmp=tmpTime(:,:,layerNum);
-%         tmp(1:(size(tmp,1)+1):end)=0; %zeroing out the diagonal values
-%         infOutflow(1,layerNum)=sum(sum(tmp));
-%     end
-%     PDONCntrlffDTF4Mat(i,:)=infOutflow;
-% end
 
 
 load([destinationPath,'PDListONDrugCumPFCCompsdDTF_ONDRUG.mat'],'PDListONDrugCumPFCComps');
