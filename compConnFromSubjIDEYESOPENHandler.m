@@ -1,8 +1,8 @@
 
-destinationPath='E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\';
-sourceFilePath='E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\PD REST\';
-locPath=('C:\Users\aalipour\Documents\MATLAB\eeglab2019_1\plugins\dipfit\standard_BESA\standard-10-5-cap385.elp');
-locPathFrwrdMdel='C:\Users\aalipour\Documents\MATLAB\eeglab2019_1\plugins\dsi\headModel\resources\head_modelColin27_8003_Standard-10-5-Cap339.mat';
+destinationPath='PATH TO EEG OBJECTS';
+sourceFilePath='PATH TO RAW DATA';
+locPath=('PATH TO LOCATION FILES\MATLAB\eeglab2019_1\plugins\dipfit\standard_BESA\standard-10-5-cap385.elp');
+locPathFrwrdMdel='PATH TO\MATLAB\eeglab2019_1\plugins\dsi\headModel\resources\head_modelColin27_8003_Standard-10-5-Cap339.mat';
 chckModelConsistancy=0;
 
 
