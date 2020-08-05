@@ -1,10 +1,10 @@
 
 
 subjectID=909;
-destinationPath='E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\';
-sourceFilePath='E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\PD REST\';
-locPath=('C:\Users\aalipour\Documents\MATLAB\eeglab2019_1\plugins\dipfit\standard_BESA\standard-10-5-cap385.elp');
-locPathFrwrdMdel='C:\Users\aalipour\Documents\MATLAB\eeglab2019_1\plugins\dsi\headModel\resources\head_modelColin27_8003_Standard-10-5-Cap339.mat';
+destinationPath='PATH TO EEG OBJECTS';
+sourceFilePath='PATH TO RAW DATA';
+locPath=('PATH TO\MATLAB\eeglab2019_1\plugins\dipfit\standard_BESA\standard-10-5-cap385.elp');
+locPathFrwrdMdel='PATH TO\MATLAB\eeglab2019_1\plugins\dsi\headModel\resources\head_modelColin27_8003_Standard-10-5-Cap339.mat';
 chckModelConsistancy=0;
 
 
@@ -57,8 +57,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 upperFrequencyBound=58;
-CntrlList=[894,908,8010,906,903,8060,893,909,911,895,913,900,896,899,914,910,890,891,912,905,904,892,902,901,898,897,907];
-CntrlList=[908,8010,8060,893,909,900,914,910,891,892,902];
+CntrlList=[894,908,8010,906,903,8060,893,909,911,895,913,900,896,899,914,910,890,891,912,905,904,892,902,901,898,897,907,908,8010,8060,893,909,900,914,910,891,892,902];
 
 CntrlRPDCMat=nan(length(CntrlList),upperFrequencyBound);
 for i=1:length(CntrlList)
@@ -78,8 +77,7 @@ for i=1:length(CntrlList)
 end
 
 
-PDListonDrug=[801	802	803	804	805	806	807	808	809	810	811	813	814	815	816	817	818	819	820	821	822	823	824	825	];%826	827	828	829];
-PDListonDrug=[802	803	806	807	808	813	816	817	819	823	824	827	828	829];%826	;
+PDListonDrug=[801	802	803	804	805	806	807	808	809	810	811	813	814	815	816	817	818	819	820	821	822	823	824	825	802	803	806	807	808	813	816	817	819	823	824	827	828	829];%826	;];%826	827	828	829];
 
 PDRPDCMat=nan(length(PDListonDrug),upperFrequencyBound);
 for i=1:length(PDListonDrug)
