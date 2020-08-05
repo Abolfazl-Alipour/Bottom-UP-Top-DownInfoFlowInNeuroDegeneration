@@ -80,7 +80,7 @@ EEG = pop_rmbase(EEG,[],[]);
 EEG2=EEG;
 rawData=EEG2.data;
 
-% save(['E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\Data_',int2str(subjectID),'.mat'],'rawData')
+% save(['PATH TO EEG OBJs\Data_',int2str(subjectID),'.mat'],'rawData')
 % eeglab
 % EEG = pop_importdata('dataformat','matlab','nbchan',0,'data','E:\\Abolfazl\\OtherProjs\\PDPredictiveCoding\\Data\\restingStatesLastWave(hopefully)\\DownlaodedDataset\\ProcessedData\\Data_894.mat','srate',500,'pnts',0,'xmin',0);EEG.setname=int2str(subjectID);EEG = eeg_checkset( EEG );
 % EEG=EEG2;
