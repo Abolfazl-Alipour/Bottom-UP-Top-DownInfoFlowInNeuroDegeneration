@@ -1,13 +1,15 @@
 eeglab;
 close all
-destinationPath='E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\';
+destinationPath='PATH TO EEG OBJECTS';
 
-CntrlList=[908,8010,8060,893,909,900,914,910,891,892,902];
+CntrlList=;
 
 for i=1:length(CntrlList)
     subjectID=CntrlList(i);
     load([destinationPath,'EEGObj_Component',int2str(subjectID),'.mat'],'EEG')
-    EEG= pop_est_mvarConnectivity(EEG,'nogui','connmethods',{'ffDTF'}); %{'DTF','dDTF','ffDTF','RPDC','Coh','pCoh'}
+    EEG= pop_est_mvarConnectivity(EEG,'nogui','connmethods',{'ffDTF'}); 
+    % IT COULD BE ANY OF THE FOLLOWING 'DTF','dDTF','ffDTF','RPDC','Coh','pCoh'
+    
     ffDTF=EEG.CAT.Conn.ffDTF;
     save([destinationPath,'CompffDTFMatrx_',int2str(subjectID),'.mat'],'ffDTF')
 end
@@ -48,7 +50,7 @@ end
 %%
 eeglab;
 close all
-destinationPath='E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\';
+destinationPath='PATH TO EEG OBJECTS';
 
 CntrlList=[908,8010,8060,893,909,900,914,910,891,892,902];
 
