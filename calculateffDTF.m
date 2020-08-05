@@ -1,7 +1,7 @@
 clear
 eeglab;
 close all
-destinationPath='E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\';
+destinationPath='PATH TO EEG OBJECTS';
 
 CntrlList=[908,8010,8060,893,909,900,914,910,891,892,902];
 
