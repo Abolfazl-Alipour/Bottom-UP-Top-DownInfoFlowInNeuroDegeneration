@@ -1,6 +1,5 @@
-EEG = pop_dipfit_settings( EEG, 'hdmfile','C:\\Users\\aalipour\\Documents\\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\standard_vol.mat','coordformat','MNI','mrifile','C:\\Users\\aalipour\\Documents\\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\standard_mri.mat','chanfile','C:\\Users\\aalipour\\Documents\\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\elec\\standard_1005.elc','chansel',[1:EEG.nbchan] );
+EEG = pop_dipfit_settings( EEG, 'hdmfile','PATHTO\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\standard_vol.mat','coordformat','MNI','mrifile','PATHTO\\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\standard_mri.mat','chanfile','PATHTO\\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\elec\\standard_1005.elc','chansel',[1:EEG.nbchan] );
 EEG = pop_multifit(EEG, [1:size(EEG.icaweights,1)] ,'threshold',100,'dipplot','on','plotopt',{'normlen' 'on'});
-%pop_dipplot( EEG, [1:size(EEG.icaweights,1)] ,'rvrange',[0 100] ,'mri','C:\\Users\\aalipour\\Documents\\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\standard_mri.mat','normlen','on');
 
 
 
