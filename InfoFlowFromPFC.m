@@ -15,7 +15,7 @@ end
     
 end
 
-pop_dipplot( EEG, [cell2mat(PFCComps)] ,'rvrange',[0 100] ,'mri','C:\\Users\\aalipour\\Documents\\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\standard_mri.mat','normlen','on');
+pop_dipplot( EEG, [cell2mat(PFCComps)] ,'rvrange',[0 100] ,'mri','PATHTO\\MATLAB\\eeglab2019_1\\plugins\\dipfit\\standard_BEM\\standard_mri.mat','normlen','on');
 
 
 newa=a(:,cell2mat(PFCComps),:,:);
