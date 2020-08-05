@@ -82,9 +82,9 @@ EEG = pop_rmbase(EEG,[],[]);
 EEG2=EEG;
 rawData=EEG2.data;
 
-% save(['E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\Data_',int2str(subjectID),'.mat'],'rawData')
+% save(['PATH TO EEG OBJECTS\ProcessedData\Data_',int2str(subjectID),'.mat'],'rawData')
 % eeglab
-% EEG = pop_importdata('dataformat','matlab','nbchan',0,'data','E:\\Abolfazl\\OtherProjs\\PDPredictiveCoding\\Data\\restingStatesLastWave(hopefully)\\DownlaodedDataset\\ProcessedData\\Data_894.mat','srate',500,'pnts',0,'xmin',0);EEG.setname=int2str(subjectID);EEG = eeg_checkset( EEG );
+% EEG = pop_importdata('dataformat','matlab','nbchan',0,'data','PATH TO EEG OBJECTS\\Data_894.mat','srate',500,'pnts',0,'xmin',0);EEG.setname=int2str(subjectID);EEG = eeg_checkset( EEG );
 % EEG=EEG2;
 
 %importing 
@@ -222,117 +222,3 @@ end
 
 
 
-
-
- 
- 
- %%%        graveyard %%
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  tmp(:,2:end)=tmp(:,2:end)-rejectionThreshold;
-% [i,j]=find(tmp()==max(tmp,[],2));
-% 
-% 
-% keepCell={};
-% ii=1;
-% for kk=1:size(tmp,1)
-%     if tmp(kk,1)>(sum(tmp(kk,2:7))-rejectionThreshold)
-%         keepCell{ii}=kk;
-%         ii=ii+1
-%     end
-% end
-% keepVec=cell2mat(keepCell);
-% EEG = pop_subcomp( EEG,keepVec , 0);EEG = eeg_checkset( EEG );
-% 
-% est_selModelOrder(EEG,'morder',[1 100])
-% 'winStartIdx'
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% [EEG,com]=pop_importdata( 'setname',int2str(subjectID),'data',['E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\Data_',int2str(subjectID),'.mat'],...
-%     'dataformat','matlab')
-% pop_topoplot(EEG, 0, [1:13] ,'895 pruned with ICA',[4 4] ,0,'electrodes','on')
-% 
-% 
-%  itpop_eegplot( EEG, 1, 1, 1);EEG = pop_rmdat( EEG, {'S  3'},[-0.1 1.9] ,0);EEG.setname='895';EEG = eeg_checkset( EEG );EEG = eeg_checkset( EEG );pop_eegplot( EEG, 1, 1, 1);pop_eegplot( EEG, 1, 1, 1);EEG = clean_artifacts(EEG, 'FlatlineCriterion',5,'ChannelCriterion',0.8,'LineNoiseCriterion',4,'Highpass','off','BurstCriterion',20,'WindowCriterion',0.25,'BurstRejection','on','Distance','Euclidian','WindowCriterionTolerances',[-Inf 7] );EEG = eeg_checkset( EEG );pop_eegplot( EEG, 1, 1, 1);EEG = eeg_checkset( EEG );EEG = pop_runica(EEG, 'icatype', 'runica', 'extended',1,'interrupt','on');EEG = eeg_checkset( EEG );EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );EEG = pop_icflag(EEG, [NaN NaN;0.9 1;0.9 1;0.9 1;0.9 1;0.9 1;0.9 1]);EEG = eeg_checkset( EEG );EEG = pop_icflag(EEG, [NaN NaN;0.75 1;0.75 1;0.75 1;0.75 1;0.75 1;0.75 1]);EEG = eeg_checkset( EEG );EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );pop_eegplot( EEG, 1, 1, 1);pop_topoplot(EEG, 0, [1:13] ,'895 pruned with ICA',[4 4] ,0,'electrodes','on');EEG = pop_subcomp( EEG, [1], 0);EEG = eeg_checkset( EEG );
-% 
-%  
-%  
-%      'icselector',{'hq'},'modelingApproach',         ...
-%         {'Segmentation VAR'     ...
-%         'algorithm' {'Vieira-Morf'} ...
-%         'winStartIdx' []    ...
-%         'winlen'  EEG.xmax-5    ...
-%         'winstep' WindowStepSizeSec  ...
-%         'taperfcn' 'blackmanharris'  ...
-%         'epochTimeLims' []      ...
-%         'prctWinToSample' 100   ...
-%         'normalize' {'method' {'time' 'ensemble'}} ...
-%         'detrend' {'method' 'constant'} ...
-%         'verb' VERBOSITY_LEVEL},      ...
-%         'morderRange',[1 30] ,  ...
-%         'downdate',true,        ...
-%         'runPll',[],            ...
-%         'icselector',{'sbc' 'aic' 'fpe' 'hq'},  ...
-%         'winStartIdx',[],       ...
-%         'epochTimeLims',[],     ...
-%         'prctWinToSample',100,   ...
-%         'plot', [], ...
-%         'verb', VERBOSITY_LEVEL);
-%     
-%     
-%     
-%     
-%     
-%     
-%     
-%     
-%     
-%     
-%     
-%     
-% 
-% 
-% 
-% 
-% ,'icselector',{'hq'},'winlen',winLength);,'icselector','hq','winlen',(EEG.xmax-5));EEG = eeg_checkset( EEG );
-% 
-% EEG.etc.eeglabvers = '2019.1'; % this tracks which version of EEGLAB is being used, you may ignore itpop_eegplot( EEG, 1, 1, 1);EEG = pop_rmdat( EEG, {'S  3'},[-0.1 1.9] ,0);EEG.setname='895';EEG = eeg_checkset( EEG );EEG = eeg_checkset( EEG );pop_eegplot( EEG, 1, 1, 1);pop_eegplot( EEG, 1, 1, 1);EEG = clean_artifacts(EEG, 'FlatlineCriterion',5,'ChannelCriterion',0.8,'LineNoiseCriterion',4,'Highpass','off','BurstCriterion',20,'WindowCriterion',0.25,'BurstRejection','on','Distance','Euclidian','WindowCriterionTolerances',[-Inf 7] );EEG = eeg_checkset( EEG );pop_eegplot( EEG, 1, 1, 1);EEG = eeg_checkset( EEG );EEG = pop_runica(EEG, 'icatype', 'runica', 'extended',1,'interrupt','on');EEG = eeg_checkset( EEG );EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );EEG = pop_icflag(EEG, [NaN NaN;0.9 1;0.9 1;0.9 1;0.9 1;0.9 1;0.9 1]);EEG = eeg_checkset( EEG );EEG = pop_icflag(EEG, [NaN NaN;0.75 1;0.75 1;0.75 1;0.75 1;0.75 1;0.75 1]);EEG = eeg_checkset( EEG );EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );EEG = eeg_checkset( EEG );EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );EEG = pop_icflag(EEG, [NaN NaN;0.9 1;0.9 1;0.9 1;0.9 1;0.9 1;0.9 1]);EEG = eeg_checkset( EEG );EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );pop_eegplot( EEG, 1, 1, 1);EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );pop_topoplot(EEG, 0, [1:38] ,'895 pruned with ICA',[6 7] ,0,'electrodes','on');pop_eegplot( EEG, 1, 1, 1);EEG = pop_forwardModel(EEG, 'C:\Users\aalipour\Documents\MATLAB\eeglab2019_1\plugins\dsi\headModel\resources\head_modelColin27_8003_Standard-10-5-Cap339.mat', [0.33       0.022        0.33], 0,1);EEG = pop_rsbl(EEG, 1, 1, 'power', 'bsbl', 1);EEG.etc.eeglabvers = '2019.1'; % this tracks which version of EEGLAB is being used, you may ignore itEEG = pop_pre_prepData(EEG);EEG = eeg_checkset( EEG );EEG = eeg_checkset( EEG );EEG = pop_pre_prepData(EEG);EEG = eeg_checkset( EEG );EEG = pop_est_selModelOrder(EEG,0);EEG = eeg_checkset( EEG );EEG = pop_pre_prepData(EEG);EEG = eeg_checkset( EEG );EEG = pop_est_selModelOrder(EEG,0);EEG = pop_est_selModelOrder(EEG,0);
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% EEG.etc.eeglabvers = '2019.1'; % this tracks which version of EEGLAB is being used, you may ignore itpop_eegplot( EEG, 1, 1, 1);EEG = pop_rmdat( EEG, {'S  3'},[-0.1 1.9] ,0);EEG.setname='895';EEG = eeg_checkset( EEG );EEG = eeg_checkset( EEG );pop_eegplot( EEG, 1, 1, 1);pop_eegplot( EEG, 1, 1, 1);EEG = clean_artifacts(EEG, 'FlatlineCriterion',5,'ChannelCriterion',0.8,'LineNoiseCriterion',4,'Highpass','off','BurstCriterion',20,'WindowCriterion',0.25,'BurstRejection','on','Distance','Euclidian','WindowCriterionTolerances',[-Inf 7] );EEG = eeg_checkset( EEG );pop_eegplot( EEG, 1, 1, 1);EEG = eeg_checkset( EEG );EEG = pop_runica(EEG, 'icatype', 'runica', 'extended',1,'interrupt','on');EEG = eeg_checkset( EEG );EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );EEG = pop_icflag(EEG, [NaN NaN;0.9 1;0.9 1;0.9 1;0.9 1;0.9 1;0.9 1]);EEG = eeg_checkset( EEG );EEG = pop_icflag(EEG, [NaN NaN;0.75 1;0.75 1;0.75 1;0.75 1;0.75 1;0.75 1]);EEG = eeg_checkset( EEG );EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );pop_eegplot( EEG, 1, 1, 1);pop_topoplot(EEG, 0, [1:13] ,'895 pruned with ICA',[4 4] ,0,'electrodes','on');EEG = pop_subcomp( EEG, [1], 0);EEG = eeg_checkset( EEG );EEG = eeg_checkset( EEG );
-% 
-% 
-% 
-% 
-% [EEG,com]=pop_importdata( 'setname',int2str(subjectID),'data',['E:\Abolfazl\OtherProjs\PDPredictiveCoding\Data\restingStatesLastWave(hopefully)\DownlaodedDataset\ProcessedData\Data_',int2str(subjectID),'.mat'],...
-%     'dataformat','matlab')
-% pop_topoplot(EEG, 0, [1:13] ,'895 pruned with ICA',[4 4] ,0,'electrodes','on')
-% 
-% pop_eegplot( EEG, 1, 1, 1);EEG = pop_rmdat( EEG, {'S  3'},[-0.1 1.9] ,0);EEG.setname='895';EEG = eeg_checkset( EEG );EEG = eeg_checkset( EEG );pop_eegplot( EEG, 1, 1, 1);pop_eegplot( EEG, 1, 1, 1);EEG = clean_artifacts(EEG, 'FlatlineCriterion',5,'ChannelCriterion',0.8,'LineNoiseCriterion',4,'Highpass','off','BurstCriterion',20,'WindowCriterion',0.25,'BurstRejection','on','Distance','Euclidian','WindowCriterionTolerances',[-Inf 7] );EEG = eeg_checkset( EEG );pop_eegplot( EEG, 1, 1, 1);EEG = eeg_checkset( EEG );EEG = pop_runica(EEG, 'icatype', 'runica', 'extended',1,'interrupt','on');EEG = eeg_checkset( EEG );EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );EEG = pop_icflag(EEG, [NaN NaN;0.9 1;0.9 1;0.9 1;0.9 1;0.9 1;0.9 1]);EEG = eeg_checkset( EEG );EEG = pop_icflag(EEG, [NaN NaN;0.75 1;0.75 1;0.75 1;0.75 1;0.75 1;0.75 1]);EEG = eeg_checkset( EEG );EEG = pop_iclabel(EEG, default);EEG = eeg_checkset( EEG );pop_eegplot( EEG, 1, 1, 1);pop_topoplot(EEG, 0, [1:13] ,'895 pruned with ICA',[4 4] ,0,'electrodes','on');EEG = pop_subcomp( EEG, [1], 0);EEG = eeg_checkset( EEG );
-% 
-% 
-%  
-%  
-%  
-%  
-%  
-%  
-%  
-%  
-%  
-%  
-%  
